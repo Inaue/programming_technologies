@@ -43,7 +43,7 @@ class Teste_Trabalhador
 		System.out.println("Resultados do dia util:");
 		
 		for(var f : func)
-			System.out.println(f.quantidade + "\t" + f.produto);
+			System.out.println(f.obter_quant() + "\t" + f.obter_prod());
 
 		entrada.close();
 	}
@@ -51,9 +51,9 @@ class Teste_Trabalhador
 
 class Trabalhador extends Thread
 {
-	public String produto;
-	public int tempo;
-	public int quantidade;
+	private String produto;
+	private int tempo;
+	private int quantidade;
 
 	public Trabalhador(String produto, int tempo, int quantidade)
 	{
@@ -82,4 +82,20 @@ class Trabalhador extends Thread
 
 		System.out.println("Acabei de produzir " + this.produto);
 	}
+
+	public String obter_prod()
+	{
+		return this.produto;
+	}
+
+	public int obter_tempo()
+	{
+		return this.tempo;
+	}
+
+	public int obter_quant()
+	{
+		return this.quantidade;
+	}
+
 }

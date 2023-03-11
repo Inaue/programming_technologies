@@ -33,7 +33,7 @@ class Teste_Trabalhador
 		System.out.println("Fim da jornada de trabalho!");
 		System.out.println("Resultados do dia util:");
 		
-		System.out.println(func.quantidade + "\t" + func.produto);
+		System.out.println(func.obter_quant() + "\t" + func.obter_prod());
 
 		entrada.close();
 	}
@@ -41,10 +41,10 @@ class Teste_Trabalhador
 
 class Trabalhador extends Thread
 {
-	public String produto;
-	public int tempo;
-	public int quantidade;
-	public boolean finalizar;
+	private String produto;
+	private int tempo;
+	private int quantidade;
+	private boolean finalizar;
 
 	public Trabalhador(String produto, int tempo)
 	{
@@ -77,6 +77,26 @@ class Trabalhador extends Thread
 	public void parar()
 	{
 		this.finalizar = true;
+	}
+
+	public String obter_prod()
+	{
+		return this.produto;
+	}
+
+	public int obter_tempo()
+	{
+		return this.tempo;
+	}
+
+	public int obter_quant()
+	{
+		return this.quantidade;
+	}
+
+	public boolean finalizou()
+	{
+		return this.finalizar;
 	}
 }
 
