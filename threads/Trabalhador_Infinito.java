@@ -15,13 +15,13 @@ class Teste_Trabalhador
         	Scanner entrada         = new Scanner(System.in);
 		
 		System.out.println("FABRICA 24h Ltda.");
-		System.out.println("______________________________________________");
-		System.out.println("Produto:");
+		System.out.println("__________________________________________________________________");
+		System.out.println("Digite o nome do produto a ser produzido:");
 		Produto		= entrada.next();
 		System.out.println("Maximo de tempo para produzir a unidade (em ms; < 2 147 483 647) :");
 		max_tmp		= entrada.nextInt();
 		gera_num	= new Random((long)max_tmp);
-		System.out.println("______________________________________________");
+		System.out.println("__________________________________________________________________");
 		tempo	= (int)(gera_num.nextFloat() * max_tmp) + 1;
 		func	= new Trabalhador(Produto, tempo);
 		System.out.println("Pressione ENTER para encerrar a jornada.");
@@ -29,7 +29,7 @@ class Teste_Trabalhador
 		entrada.next();
 		func.parar();
 		func.join();
-		System.out.println("___________________________________");
+		System.out.println("__________________________________________________________________");
 		System.out.println("Fim da jornada de trabalho!");
 		System.out.println("Resultados do dia util:");
 		

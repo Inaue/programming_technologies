@@ -38,7 +38,7 @@ class Teste_Trabalhador
 		for(var f : func)
 			f.join();
 
-		System.out.println("___________________________________");
+		System.out.println("______________________________________________");
 		System.out.println("Fim da jornada de trabalho!");
 		System.out.println("Resultados do dia util:");
 		
